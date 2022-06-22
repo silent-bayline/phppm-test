@@ -5,8 +5,6 @@
 mysql コンテナの中で
 
 ```
-apk add mysql-client
-
 mysql -h mysql -u root -p
 ※パスワードは password
 
@@ -16,6 +14,7 @@ ALTER USER root@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 ppm コンテナの中で
 
 ```
+composer install
 php artisan migrate
 ```
 
