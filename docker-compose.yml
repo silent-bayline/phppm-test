@@ -3,7 +3,7 @@ version: "3.1"
 services:
   ppm:
     platform: linux/x86_64
-    image: phppm/nginx
+    build: ./docker/phppm/
     command: --bootstrap=laravel --static-directory=public/
     volumes:
       - ./src:/var/www
