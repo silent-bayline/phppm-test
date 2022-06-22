@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  ppm:
+    platform: linux/x86_64
+    image: phppm/nginx
+    command: --bootstrap=laravel --static-directory=public/
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "80:80"
+
+  mysql:
+    platform: linux/x86_64
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - 3306:3306
